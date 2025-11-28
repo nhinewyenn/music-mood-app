@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { io, Socket } from 'socket.io-client';
 
 export default function CamScreen() {
@@ -10,7 +10,7 @@ export default function CamScreen() {
 
   useEffect(() => {
     // Initialize socket connection
-    socketRef.current = io('http://localhost:3001'); // Replace with your server URL
+    socketRef.current = io('http://localhost:3001');
 
     return () => {
       socketRef.current?.disconnect();
@@ -20,6 +20,7 @@ export default function CamScreen() {
   const sendVidData = (data: string) => {
     socketRef.current?.emit('videoData', data);
   };
+
   useEffect(() => {
     const enableVidStream = async () => {
       try {

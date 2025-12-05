@@ -1,5 +1,9 @@
 /** @format */
 
+export const clientSecret = process.env.SPOTIFY_KEY;
+export const clientID = process.env.CLIENT_ID;
+export const redirectUrl = process.env.REDIRECT_URL;
+
 export const mockSongs = [
   {
     id: 1,
